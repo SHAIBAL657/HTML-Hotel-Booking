@@ -61,10 +61,17 @@ body{
     .second-nav-left{
         display: none;
     }
+    .hmcard{
+        padding-top: 200px !important;
+    }
 }
 
 .form-control{
     outline: 1px solid black;
+}
+
+.hmcard{
+    padding-top: 100px;
 }
 
 .card-title{
