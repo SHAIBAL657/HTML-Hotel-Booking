@@ -1,0 +1,97 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.bar{
+    font-size: 35px;
+    color: black;
+    font-weight: bolder;
+}
+
+.bar:hover{
+    color: rgb(45, 45, 129);
+}
+
+.navbar{
+    top: 0;
+    background-color:white;
+    color: black;
+    position: sticky;
+    z-index: 2;
+    display: flex;
+}
+
+.navbar-2{
+    top: 20px;
+    background-color:red;
+    color: black;
+    position: sticky;
+    z-index: -1;
+    display: flex;
+}
+
+.l{
+    width: 50%;
+    float: left;
+}
+
+@media (min-width:780px){
+    .dropdown:hover .dropdown-menu{
+        display: block;
+    }
+}
+
+@media (max-width:780px){
+    .form-inline{
+        background-color: black; 
+    }
+}
+
+.form-control{
+    outline: 1px solid black;
+}
+
+.card-title{
+    font-weight: 900;
+}
+
+.checked{
+    color: orange;
+}
+
+.faded-grey{
+    background-color:#D3DDE7;
+    color: black;
+}
+.container-img{
+    position: relative;
+}
+.pos-left {
+    position: absolute;
+    bottom: 15px;
+    left: 16px;
+    font-size: 30px;
+}
+.pos-right{
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    font-size: 30px;
+    color:white;
+}
+
+.absolute {
+    position: absolute;
+    width: 50%;
+    bottom: 20px;
+} 
+
+.btn-deeporange{
+    background-color: darkorange;
+    color: white;
+    font-size: 18px;
+}
+
+.bccode{
+    float:right;
+}
