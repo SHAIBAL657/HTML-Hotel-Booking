@@ -12,6 +12,7 @@ body{
     color: rgb(45, 45, 129);
 }
 
+
 .navbar{
     top: 0;
     background-color:white;
@@ -64,6 +65,13 @@ body{
     .hmcard{
         padding-top: 200px !important;
     }
+    .dropdown-menu{
+        width: 100vw;
+    }
+}
+
+.dropdown-menu{
+    background-color: darkorange;
 }
 
 .form-control{
