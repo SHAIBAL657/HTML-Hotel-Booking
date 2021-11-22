@@ -14,8 +14,8 @@
 <body>
     
     <!--Navbar--> 
-    <div>  
-    <nav class="navbar navbar-light bg-light ">
+    <div class="fixed-top">  
+    <nav class="navbar navbar-light bg-light">
       <div class="dropdown" id="drop">
           <button class="btn" type="button" id="dropdownMenuButton"  data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
@@ -38,7 +38,9 @@
             </div>
             
         </div>
-        <a class="navbar-brand col" href="https://www.bedroomvillas.com/"><img src="image/bedroomvillas-logo-new.png" alt=""></a>
+        <div class="col">
+          <a class="navbar-brand" href="https://www.bedroomvillas.com/"><img src="image/bedroomvillas-logo-new.png" alt=""></a>
+        </div>
           <form class="form-inline co-change">
             
               <input class="form-control col g-2 m-1" type="text" placeholder="Enter Your Destination">
@@ -53,8 +55,31 @@
             <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
           </form>
     </nav>
-    <nav class="navbar-2 navbar-light bg-danger">
-
+    <nav class="navbar-2 navbar-light bg-light py-2 justify-content-between">
+      <div class="second-nav-left col ml-2">
+        <a href="#"><b>Arizona</b></a> &nbsp;&nbsp;&nbsp;
+        <a href="#">Search Over 15 Properties</a> 
+      </div>
+      <div class="second-nav-right col">
+        <span class="float-right">Sort By &nbsp;&nbsp; <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"  data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Most Popular
+          </button>
+          <div class="dropdown-menu" id="menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">
+              Most Popular</a>
+            <a class="dropdown-item" href="#">
+              Price:High to Low</a>
+            <a class="dropdown-item" href="#">
+              Price:Low to High
+          </a>
+          <a class="dropdown-item" href="#">
+            Rating:High to Low</a>
+          <a class="dropdown-item" href="#">
+            Rating:Low to High</a>
+          </div>
+        </span> 
+      </div>
     </nav>
   </div>
     <!--/.Navbar-->
@@ -67,7 +92,7 @@
             <img src="image/wild-rose-bed-breakfast-0.jpg" class="card-img-top" alt="room view">
             <div class="card-img-overlay">
               <div class="row justify-content-end">
-                <button type="button" class="btn btn-light py-2 px-3 mr-4">
+                <button type="button" class="btn faded-grey py-2 px-3 mr-4">
                   More Photos <span class="badge faded-grey "><i class="fa fa-angle-right"></i></span>
                 </button>
               </div>
@@ -109,7 +134,7 @@
             <img src="image/wild-rose-bed-breakfast-0.jpg" class="card-img-top" alt="room view">
             <div class="card-img-overlay">
               <div class="row justify-content-end">
-                <button type="button" class="btn btn-light py-2 px-3 mr-4">
+                <button type="button" class="btn faded-grey py-2 px-3 mr-4">
                   More Photos <span class="badge faded-grey "><i class="fa fa-angle-right"></i></span>
                 </button>
               </div>
@@ -151,7 +176,7 @@
             <img src="image/wild-rose-bed-breakfast-0.jpg" class="card-img-top" alt="room view">
             <div class="card-img-overlay">
               <div class="row justify-content-end">
-                <button type="button" class="btn btn-light py-2 px-3 mr-4">
+                <button type="button" class="btn faded-grey py-2 px-3 mr-4">
                   More Photos <span class="badge faded-grey "><i class="fa fa-angle-right"></i></span>
                 </button>
               </div>
@@ -193,7 +218,7 @@
             <img src="image/wild-rose-bed-breakfast-0.jpg" class="card-img-top" alt="room view">
             <div class="card-img-overlay">
               <div class="row justify-content-end">
-                <button type="button" class="btn btn-light py-2 px-3 mr-4">
+                <button type="button" class="btn faded-grey py-2 px-3 mr-4">
                   More Photos <span class="badge faded-grey "><i class="fa fa-angle-right"></i></span>
                 </button>
               </div>
@@ -235,7 +260,7 @@
             <img src="image/wild-rose-bed-breakfast-0.jpg" class="card-img-top" alt="room view">
             <div class="card-img-overlay">
               <div class="row justify-content-end">
-                <button type="button" class="btn btn-light py-2 px-3 mr-4">
+                <button type="button" class="btn faded-grey py-2 px-3 mr-4">
                   More Photos <span class="badge faded-grey "><i class="fa fa-angle-right"></i></span>
                 </button>
               </div>
@@ -277,7 +302,7 @@
               <img src="image/wild-rose-bed-breakfast-0.jpg" class="card-img-top" alt="room view">
               <div class="card-img-overlay">
                 <div class="row justify-content-end">
-                  <button type="button" class="btn btn-light py-2 px-3 mr-4">
+                  <button type="button" class="btn faded-grey py-2 px-3 mr-4">
                     More Photos <span class="badge faded-grey "><i class="fa fa-angle-right"></i></span>
                   </button>
                 </div>

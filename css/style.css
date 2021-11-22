@@ -18,16 +18,28 @@ body{
     color: black;
     position: sticky;
     z-index: 2;
-    display: flex;
 }
 
+
 .navbar-2{
-    top: 20px;
+    top: 0;
     background-color:red;
     color: black;
     position: sticky;
-    z-index: -1;
+    z-index: 1;
     display: flex;
+    font-size: 18px;
+}
+
+.second-nav-left a{
+    color: orange;
+
+}
+
+.second-nav-left a:hover{
+    color: darkorange;
+    text-decoration: none;
+    
 }
 
 .l{
@@ -45,6 +57,10 @@ body{
     .form-inline{
         background-color: black; 
     }
+
+    .second-nav-left{
+        display: none;
+    }
 }
 
 .form-control{
@@ -60,9 +76,15 @@ body{
 }
 
 .faded-grey{
-    background-color:#D3DDE7;
+    background-color:white;
     color: black;
+    opacity: 80%;
 }
+
+.faded-grey:hover{
+    background-color: aliceblue;
+}
+
 .container-img{
     position: relative;
 }
@@ -78,6 +100,10 @@ body{
     right: 16px;
     font-size: 30px;
     color:white;
+}
+
+.pos-right:hover{
+    color:red;
 }
 
 .absolute {
