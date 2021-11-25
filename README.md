@@ -13,3 +13,8 @@
         ~ When user click on Show List button user must see the Property tiles and vice versa.
 
 <note> Run <b>index.html</b> to get a demo.</note> 
+## Preview
+
+![Preview](https://ibb.co/9bj3tqL
+https://ibb.co/R9wg7CH
+https://ibb.co/Ld31451)
