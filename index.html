@@ -9,15 +9,18 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
     <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
     
     <!--Navbar--> 
-    <div class="fixed-top">  
+    <div id="navall">  
     <nav class="navbar navbar-light bg-light">
       <div class="dropdown" id="drop">
-          <button class="btn" type="button" id="dropdownMenuButton"  data-toggle="dropdown" aria-haspopup="true"
+          <button class="btn" type="button" id="dropdownMenuButton1"  data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
                   <i class="fa fa-bars bar"></i>
           </button>
@@ -41,19 +44,22 @@
         <div class="col">
           <a class="navbar-brand" href="https://www.bedroomvillas.com/"><img src="image/bedroomvillas-logo-new.png" alt=""></a>
         </div>
-          <form class="form-inline co-change">
+          <form class="form-inline" autocomplete="off">
             
-              <input class="form-control col g-2 m-1" type="text" placeholder="Enter Your Destination">
-            
-            
-              <input class="form-control col g-2 m-1" type="text" placeholder="Check In" >
-            
-            
-              <input class="form-control col g-2 m-1" type="text" placeholder="Check Out" >
-            
-            <button class="btn btn-secondary m-3 my-sm-0" type="">Filter</button>
-            <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
-          </form>
+              <input class="form-control col g-2 m-1" type="text" id="place"  onkeypress="place()" placeholder="Enter Your Destination">
+              <input class="form-control col g-2 m-1" type="text" id="checkin" placeholder="Check In" >
+              <input class="form-control col g-2 m-1" type="text" id="checkout" placeholder="Check Out" >
+              <button type="button" class="btn btn-dark m-1" data-toggle="modal" data-target="#guestModal">
+                Guest
+              </button>
+              <button type="button" class="btn btn-dark m-1" data-toggle="modal" data-target="#priceModal">
+                Price
+              </button>
+              <button type="button" class="btn btn-dark m-1" data-toggle="modal" data-target="#searchModal"  id="search">
+                Search
+              </button>
+              
+          </form> 
     </nav>
     <nav class="navbar-2 navbar-light bg-light py-2 justify-content-between">
       <div class="second-nav-left col ml-2">
@@ -61,7 +67,7 @@
         <a href="#">Search Over 15 Properties</a> 
       </div>
       <div class="second-nav-right col">
-        <span class="float-right">Sort By &nbsp;&nbsp; <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"  data-toggle="dropdown" aria-haspopup="true"
+        <span class="float-right">Sort By &nbsp;&nbsp; <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton2"  data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
           Most Popular
           </button>
@@ -83,9 +89,10 @@
     </nav>
   </div>
     <!--/.Navbar-->
+    
 
     <!--Home Card-->
-    <div class="hmcard">
+    <div class="hmcard" id="hmcard">
     <div class="row row-cols-1 row-cols-md-3 g-4 m-1">
       <div class="col py-3">
         <div class="card h-100">
@@ -340,9 +347,85 @@
           </div>
         </div>
       </div>
+      <!--Map Show Button-->
+      <div class="button-toggle">
+        <button class="tg-map" id="tg-map"><i class="fa fa-location-arrow"></i></button>
+      </div>
+      <!--Map Show Button-->
+    </div>
+    <!--Map Prsentattion-->
+    <div class="map" id="map">
+    </div>
+    <!--Map Prsentattion-->
+    <div class="modal fade" id="guestModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" ">Enter Guest Number</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="guest-radio">
+    
+              <button class="g-dot m-2" id="g-m">-</button>
+                
+              <span class="g-dot g-count m-2" id="g-c">0</span>
+              <button class="g-dot m-2" id="g-p">+</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn darkorange" data-dismiss="modal">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="priceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"">Price Range: ৳0 - ৳30000+ per night</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="price-range-slider">
+  
+              <p class="range-value">
+                <input type="text" id="amount" readonly>
+              </p>
+              <div id="slider-range" class="range-bar"></div>
+              
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn darkorange" data-dismiss="modal">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirm given Details</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="search-radio" id="popup">
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn darkorange" data-dismiss="modal">Apply</button>
+          </div>
+        </div>
+      </div>
     </div>
     <!--/.Home Card-->
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -356,5 +439,9 @@
         crossorigin="anonymous"></script>
 
     <!--<script src="js/query.js"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArTUpPxK58U3xCnOuoFYGMtLfce4S0Ok4&libraries=places&callback=myMap"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
