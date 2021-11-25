@@ -15,6 +15,6 @@
 <note> Run <b>index.html</b> to get a demo.</note> 
 ## Preview
 
-![Preview](https://ibb.co/9bj3tqL)
-https://ibb.co/R9wg7CH
-https://ibb.co/Ld31451)
+![Preview](https://i.ibb.co/fk7GvC5/body.png)<br>
+![Preview](https://i.ibb.co/xqN6VH6/search.png)<br>
+![Preview](https://i.ibb.co/Ms0g9RN/map.png)<br>
